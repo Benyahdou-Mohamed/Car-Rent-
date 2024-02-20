@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { CarProps } from "@/types";
+import { generateCarImageUrl } from "@/utils";
 
 //import { generateCarImageUrl } from "@utils";
 
@@ -46,7 +47,34 @@ export const CarDetails = ({isOpen, closeModal, car}: CarDetailsProps) => {
                         >
                            <Image src="/close.svg" width= {20} height= {20} alt="close" className="object-contain"/>
                         </button>
-                        <p>sds,l</p>
+                        <div className="flex-1 flex flex-col gap-3">
+                            <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
+                                <Image src={generateCarImageUrl(car)} fill priority alt="car model" className="object-contain"/>
+                            </div>
+                        <div className='flex gap-3'>
+                            <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                             <Image src={generateCarImageUrl(car,29)} alt='car model' fill priority className='object-contain' />
+                             </div>
+                            <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                            <Image src={generateCarImageUrl(car,33)} alt='car model' fill priority className='object-contain' />
+                             </div>
+                             <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                              <Image  src={generateCarImageUrl(car,13)} alt='car model' fill priority className='object-contain' />
+                            </div>
+                        </div>
+                        </div>
+                        <div className="flex-1 flex flex-col gap-2">
+                            <h2 className="font-semibold text-xl capitalize">
+                                {car.make}   {car.model}
+                            </h2>
+                            {Object.entries(car).map(([key,value])=>(
+                                <div className="flex justify-between gap-5 w-full text-right" key={value}>
+                                    <h4 className="text-gray capitalize">{key.split('_').join(" ")}</h4>
+                                    <p className="text-black-100 font-semibold">{value}</p>
+                                </div>
+                            ))
+                            }
+                        </div>
                     </Dialog.Panel>
                 </Transition.Child>
                 </div>

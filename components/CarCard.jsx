@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { CustomButton } from './CustomButtton'
 import { calculateCarRent } from '@/utils'
 import { CarDetails } from './CarDetails'
-
+import { generateCarImageUrl } from '@/utils'
 
 export const CarCard = ({car}) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
@@ -30,7 +30,7 @@ export const CarCard = ({car}) => {
             </span>
         </p>
         <div className="relative w-full h-40 my-3 object-contain">
-            <Image src="/hero.png" alt="car model" fill priority></Image>
+            <Image src={generateCarImageUrl(car)} alt="car model" fill priority></Image>
         </div>
         <div className="relative w-full  mt-2">
             <div className="flex justify-between text-gray group-hover:invisible w-full">

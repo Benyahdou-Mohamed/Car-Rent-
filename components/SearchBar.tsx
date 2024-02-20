@@ -1,8 +1,17 @@
 "use client"
 import React from 'react'
 import { SearchManufacturer } from './SearchManufacturer'
-
+import Image from 'next/image'
 import { useState } from 'react'
+const SearchButton = ({otherClasses}:{otherClasses:string}) => {
+ 
+  return (
+  <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
+    <Image src='/mignifying-glass.svg' alt="mignifying-glass"
+     width={40} height={40} className="object-contain"/>
+  </button>
+)
+}
 export const SearchBar = () => {
     const [manufacturer,setManufacturer] = useState('');
     const handleSearch=()=>{
@@ -15,8 +24,9 @@ export const SearchBar = () => {
                 manufacturer = {manufacturer}
                 setManufacturer = {setManufacturer}
             />
+            <SearchButton otherClasses='sm:hidden'/>
         </div>
-    </form>
+    </form> 
   )
 }
 
