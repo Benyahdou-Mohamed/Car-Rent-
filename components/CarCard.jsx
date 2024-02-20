@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { CustomButton } from './CustomButtton'
 import { calculateCarRent } from '@/utils'
-import { CarDetails } from './carDetails'
+import { CarDetails } from './CarDetails'
 
 
 export const CarCard = ({car}) => {
