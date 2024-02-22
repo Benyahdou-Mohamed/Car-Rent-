@@ -53,14 +53,14 @@ export const SearchBar = () => {
                 manufacturer = {manufacturer}
                 setManufacturer = {setManufacturer}
             />
-            <SearchButton otherClasses='sm:hidden'/>
+            
         </div>
         <div className="searchbar__item">
         <Image src='/model-icon.png' alt="car model"
          width={25} height={25} className="absolute w-[20px]
          h-[20px] ml-4" />
          <input name="model" value={model} placeholder='Tiguan' type="text" className="searchbar__input" onChange={(e)=>setModel(e.target.value)} />
-         <SearchButton otherClasses='sm:hidden'/>
+          <SearchButton otherClasses='sm:hidden'/>
         </div>
         
     </form> 
