@@ -6,6 +6,7 @@ import { CustomFilter } from "@/components/CustomFilter";
 import { fetchCars } from "@/utils";
 import {CarCard} from "@/components/CarCard"
 import { fuels, yearsOfProduction } from "@/constants";
+import { ShowMore } from "@/components/ShowMore";
 
 export default async function Home({searchParams}) {
   
@@ -13,10 +14,11 @@ export default async function Home({searchParams}) {
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 100,
+    limit: searchParams.limit || 10,
     model: searchParams.model || "",
-  });
 
+  });
+  
   const isDataEmpty = !Array.isArray(allCars) || allCars.length<1 || !allCars
   
   return (
@@ -38,9 +40,12 @@ export default async function Home({searchParams}) {
           <section>
             <div className="home__cars-wrapper">
               {allCars.map((car)=>(
-                <CarCard car={car}/>
+                <CarCard  car={car}/>
               ))}
             </div>
+            <ShowMore
+            pageNumber={(searchParams.limit||10)/10} isNext={(searchParams.limit||10)> allCars.length}
+            ></ShowMore>
           </section>
         ):(
           <div className="home__error-container">

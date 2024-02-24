@@ -10,7 +10,7 @@ export const Hero = () => {
     <div className="hero overflow-hidden">
     <div className="flex-1 pt-36 padding-x">
       <h1 className="hero__title">
-        Find, book, rent a car — quickly and super easy!
+        Find, book, rent a car — quickly and super easy !
       </h1>
 
       <p className="hero__subtitle">
