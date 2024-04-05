@@ -18,7 +18,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 );
 
 export const SearchBar = () => {
-  const [manufacturer, setManuFacturer] = useState("");
+   const [manufacturer, setManufacturer] = useState("");
   const [model, setModel] = useState("");
 
   const router = useRouter();
@@ -62,7 +62,7 @@ export const SearchBar = () => {
       <div className='searchbar__item'>
         <SearchManufacturer
           manufacturer={manufacturer}
-          setManuFacturer={setManuFacturer}
+          setManufacturer={setManufacturer} // Corrected prop name
         />
         <SearchButton otherClasses='sm:hidden' />
       </div>
