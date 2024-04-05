@@ -18,8 +18,8 @@ const SearchButton = ({otherClasses}:{otherClasses:string}) => {
 }
 export const SearchBar = () => {
   
-    const [manufacturer,setManufacturer] = useState<string>('');;
-    const [model,setModel] = useState<string>('');;
+    const [manufacturer,setManufacturer] : [string, React.Dispatch<React.SetStateAction<string>>] = useState('');;
+    const [model,setModel] : [string, React.Dispatch<React.SetStateAction<string>>] = useState('');;
     const router=useRouter()
     const handleSearch=(e: React.FormEvent<HTMLFormElement>)=>{
       e.preventDefault();
