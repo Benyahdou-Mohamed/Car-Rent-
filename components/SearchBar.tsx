@@ -17,7 +17,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = () => {
+export const SearchBar = () => {
   const [manufacturer, setManuFacturer] = useState("");
   const [model, setModel] = useState("");
 
@@ -88,4 +88,4 @@ const SearchBar = () => {
     </form>
   );
 };
-export default SearchBar;
+
