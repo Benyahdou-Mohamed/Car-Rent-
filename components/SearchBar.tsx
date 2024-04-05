@@ -1,10 +1,9 @@
-"use client";
-
-import Image from "next/image";
-import React, { useState } from "react";
+"use client"
+import React from 'react'
+import { SearchManufacturer } from './SearchManufacturer'
+import Image from 'next/image'
+import { useState } from 'react'
 import { useRouter } from "next/navigation";
-
-import SearchManufacturer from "./SearchManufacturer";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
@@ -89,5 +88,3 @@ const SearchBar = () => {
     </form>
   );
 };
-
-export default SearchBar;
